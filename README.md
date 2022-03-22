@@ -20,6 +20,10 @@ that event is saved in local storage WHEN I refresh the page THEN the saved
 events persist
 ```
 
-Mockup demo:
+My own mockup:
+
+![my own](./assets/my-mockup.gif)
+
+Mockup from the user story:
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./assets/05-third-party-apis-homework-demo.gif)
