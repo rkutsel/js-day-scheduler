@@ -58,31 +58,15 @@ function savePerm() {
 
 function renderPerm() {
 	let items = JSON.parse(localStorage.getItem("taskObject"));
-	if (items !== null) {
-		console.log(items, items.length);
-		for (i = 0; i < 8; i++) {
+	console.log(items, items.length);
+	for (i = 0; i < 9; i++) {
+		if (items !== null) {
 			console.log(items[i]);
 			$("textarea").eq(i).text(items[i]);
 			taskObject[i] = items[i];
 		}
 	}
-	// console.log(items, items.length)
 }
-
-// event.preventDefault();
-// textEl = $("textarea").select((event) => {
-//   selection = event.target.val();
-//   console.log(selection);
-// });
-// $("button").click(function () {
-//   itemList.push($(textEl.text()));
-//   // console.log(itemList);
-// });
-
-// $("button").on("click", (event) => {console.log(event.target.parentElement)});
-// $("button").click(function () {
-//   alert($("textarea:selected").val());
-// });
 
 function initApp() {
 	setRowColors();
@@ -98,6 +82,3 @@ function initApp() {
 }
 
 initApp();
-
-// $("button").on("click", (event) => {console.log(event.target.parentElement)})
-//$("button").click((event) => {console.log(event.target.parentElement.parentElement.children[1].firstElementChild)})
