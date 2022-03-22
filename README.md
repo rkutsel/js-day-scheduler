@@ -1,5 +1,18 @@
 [#Homework Week V Day Scheduler Single Page App](https://rkutsel.github.io/js-day-scheduler/)
 
+As with previous homeworks, my approach was to get closer to the user mockup
+version of the app. Both are included bellow for reference. For the assignment I
+used the latest stable release of
+[Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/) to
+organize my HTML, [jQuery](https://jquery.com) library, which I didn't have to
+use, but I felt like it would greatly simplify my JS footprint,
+[Moment.js](https://momentjs.com) for that same purpose and lastly Zilla Slab
+Highlight Google font. The end result meets the user story. In addition to that
+it would be better to have another function that will track time without the
+need for a user to refresh the page which I will most likely include in the
+coming days. Link to the
+[live page](https://rkutsel.github.io/js-day-scheduler/).
+
 ## User Story
 
 ```md
@@ -20,10 +33,10 @@ that event is saved in local storage WHEN I refresh the page THEN the saved
 events persist
 ```
 
-My own mockup:
+### My own mockup:
 
-![my own](./assets/my-mockup.gif)
+![my own mockup](./assets/my-mockup.gif)
 
-Mockup from the user story:
+### Mockup from the user story:
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./assets/05-third-party-apis-homework-demo.gif)
+![user story mockup](./assets/05-third-party-apis-homework-demo.gif)
