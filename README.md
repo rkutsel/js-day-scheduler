@@ -7,11 +7,11 @@ used the latest stable release of
 organize my HTML, [jQuery](https://jquery.com) library, which I didn't have to
 use, but I felt like it would greatly simplify my JS footprint,
 [Moment.js](https://momentjs.com) for that same purpose and lastly Zilla Slab
-Highlight Google font. The end result meets the user story. In addition to that
-it would be better to have another function that will track time without the
-need for a user to refresh the page which I will most likely include in the
-coming days. Link to the
-[live page](https://rkutsel.github.io/js-day-scheduler/).
+Highlight Google font. Additionally used my own CSS to overwrite some defaults
+in Bootstrap. The end result meets the user story. In addition to that it would
+be better to have another function that will track time without the need for a
+user to refresh the page which I will most likely include in the coming days.
+Link to the [live page](https://rkutsel.github.io/js-day-scheduler/).
 
 ## User Story
 
