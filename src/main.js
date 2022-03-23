@@ -29,7 +29,7 @@ function getRowColors() {
 	//Set current time format: h => 1 2 ... 11 12; A => AM PM
 	// let currentTime = moment().format();
 	let timeFormat = moment(moment().format("hA"), "hA");
-	console.log(timeFormat);
+	// console.log(timeFormat);
 
 	for (i = 0; i < businessHours.length; i++) {
 		if (moment(businessHours[i], "hA").isBefore(timeFormat)) {
@@ -38,14 +38,14 @@ function getRowColors() {
 			colorRows.push("present");
 		} else colorRows.push("future");
 	}
-	timeFormat = 0;
-	console.log(timeFormat);
+	// timeFormat = 0;
+	// console.log(timeFormat);
 	return;
 }
 
 function setRowColors() {
 	getRowColors();
-	console.log("auto-refresh");
+	// console.log("auto-refresh");
 
 	let rowSelector = $(".row");
 	$(rowSelector).each(function (index) {
