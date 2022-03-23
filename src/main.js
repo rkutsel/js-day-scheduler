@@ -12,13 +12,24 @@ const businessHours = [
 	"5PM",
 ];
 
+let currentTimeEl = $("#currentDay");
 let colorRows = [];
 let taskObject = {};
+setInterval(displayTime, 1000);
+
+// handle displaying the time
+function displayTime() {
+	let currentTime = moment().format(
+		"[Date:] MMM DD, YYYY [Time:] hh:mm:ss a [Time Zone:]Z"
+	);
+	currentTimeEl.text(currentTime);
+}
 
 function getRowColors() {
 	//Set current time format: h => 1 2 ... 11 12; A => AM PM
-	let currentTime = moment();
-	let timeFormat = moment(currentTime.format("hA"), "hA");
+	// let currentTime = moment().format();
+	let timeFormat = moment(moment().format("hA"), "hA");
+	console.log(timeFormat);
 
 	for (i = 0; i < businessHours.length; i++) {
 		if (moment(businessHours[i], "hA").isBefore(timeFormat)) {
@@ -27,11 +38,14 @@ function getRowColors() {
 			colorRows.push("present");
 		} else colorRows.push("future");
 	}
+	timeFormat = 0;
+	console.log(timeFormat);
 	return;
 }
 
 function setRowColors() {
 	getRowColors();
+	console.log("auto-refresh");
 
 	let rowSelector = $(".row");
 	$(rowSelector).each(function (index) {
@@ -58,10 +72,8 @@ function savePerm() {
 
 function renderPerm() {
 	let items = JSON.parse(localStorage.getItem("taskObject"));
-	console.log(items, items.length);
 	for (i = 0; i < 9; i++) {
 		if (items !== null) {
-			console.log(items[i]);
 			$("textarea").eq(i).text(items[i]);
 			taskObject[i] = items[i];
 		}
@@ -70,13 +82,12 @@ function renderPerm() {
 
 function initApp() {
 	setRowColors();
+	displayTime();
 
 	//Define a list of data-ids
-	let buttonEl = $("button");
-	let textEl = $("textarea");
 	for (i = 0; i < businessHours.length; i++) {
-		buttonEl.eq(i).attr("data-id", [i]);
-		textEl.eq(i).attr("data-id", [i]);
+		$("button").eq(i).attr("data-id", [i]);
+		$("textarea").eq(i).attr("data-id", [i]);
 	}
 	renderPerm();
 }
