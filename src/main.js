@@ -15,21 +15,26 @@ const businessHours = [
 let currentTimeEl = $("#currentDay");
 let colorRows = [];
 let taskObject = {};
+
+//Start the clock.
 setInterval(displayTime, 1000);
+
+//Reload every 5 minutes.
+setTimeout(() => {
+	location.reload();
+}, 500000);
 
 // handle displaying the time
 function displayTime() {
 	let currentTime = moment().format(
-		"[Date:] MMM DD, YYYY [Time:] hh:mm:ss a [Time Zone:]Z"
+		"[Date:] MMM DD, YYYY [Time:] hh:mm:ss a [Time Zone:] Z"
 	);
 	currentTimeEl.text(currentTime);
 }
 
 function getRowColors() {
 	//Set current time format: h => 1 2 ... 11 12; A => AM PM
-	// let currentTime = moment().format();
 	let timeFormat = moment(moment().format("hA"), "hA");
-	// console.log(timeFormat);
 
 	for (i = 0; i < businessHours.length; i++) {
 		if (moment(businessHours[i], "hA").isBefore(timeFormat)) {
@@ -38,14 +43,12 @@ function getRowColors() {
 			colorRows.push("present");
 		} else colorRows.push("future");
 	}
-	// timeFormat = 0;
-	// console.log(timeFormat);
+
 	return;
 }
 
 function setRowColors() {
 	getRowColors();
-	// console.log("auto-refresh");
 
 	let rowSelector = $(".row");
 	$(rowSelector).each(function (index) {
